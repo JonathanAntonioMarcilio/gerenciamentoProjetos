@@ -1,7 +1,7 @@
 const express = require("express");
-const ProductController = require("../controllers/productController");
-const ProjectController = require("../controllers/projectController");
-const TaskController = require("../controllers/taskController")
+const UserController = require("./controllers/userController");
+const ProjectController = require("./controllers/projectController");
+const TaskController = require("./controllers/taskController")
 const app = express();
 
 app.use(express.json());
@@ -9,10 +9,10 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.post("/userController", ProductController.post);
-app.get("/userController", ProductController.get);
-app.put("/userController", ProductController.put);
-app.delete("/userController", ProductController.delete);
+app.post("/userController", UserController.post);
+app.get("/userController", UserController.get);
+app.put("/userController", UserController.put);
+app.delete("/userController", UserController.delete);
 
 app.post("/projectController", ProjectController.post);
 app.get("/projectController", ProjectController.get);
